@@ -1,6 +1,9 @@
 // import { Suspense, lazy, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { Layout } from './Layout';
+import { Suspense, lazy } from 'react';
+
+const HomePage = lazy(() => import('../pages/HomePage'));
 
 export const App = () => {
   return (
@@ -16,8 +19,13 @@ export const App = () => {
     // >
     //   PROJECT 2024 start
     // </div>
-    <Routes>
-      <Route path="/" element={<Layout />}></Route>
-    </Routes>
+    <Suspense fallback={<div>Loading...</div>}>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<HomePage />} />
+        </Route>
+        {/* <Route path="*" element={<NotFoundPage />} /> */}
+      </Routes>
+    </Suspense>
   );
 };

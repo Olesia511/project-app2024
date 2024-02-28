@@ -7,7 +7,7 @@ export const Layout = () => {
   return (
     <>
       {/* <AppBarHeader /> */}
-      <h2> HELLO </h2>
+      <h2 style={{ backgroundColor: 'orange' }}> HELLO </h2>
       <main
         style={{
           background:
@@ -18,8 +18,8 @@ export const Layout = () => {
           backgroundSize: 'cover',
           backgroundColor: '#040404',
           marginLeft: 'auto',
-          width: '670px',
-          height: '1005px',
+          width: '100vw',
+          height: '100vh',
         }}
       >
         <Suspense fallback={<div>LOADING.......</div>}>
