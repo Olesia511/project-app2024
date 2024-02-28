@@ -7,6 +7,7 @@ export const Layout = () => {
   return (
     <>
       {/* <AppBarHeader /> */}
+      <h2> HELLO </h2>
       <main
         style={{
           background:
